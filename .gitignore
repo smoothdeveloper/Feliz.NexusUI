@@ -1,0 +1,9 @@
+**/**.fs.jsx
+**/**.fs.jsx.map
+fable_modules
+node_modules
+paket-files
+**/bin
+**/obj
+.idea
+.paket

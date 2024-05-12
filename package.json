@@ -1,0 +1,24 @@
+{
+  "author": "smoothdeveloper",
+  "scripts": {
+    "deploy:demo": "npm run build:demo && cd demo-dist && surge --domain react-nexusui-demo.surge.sh",
+    "dev:fable": "dotnet tool restore && dotnet paket restore && dotnet fable watch ./demo/ -o ./ -e .fs.jsx -s",
+    "dev:serve": "vite demo --port 1234",
+    "dev": "concurrently -c \"cyan,green,yellow\" npm:dev:serve npm:dev:fable"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "vite": "^5.2.11",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-nexusui": "^0.1.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smoothdeveloper/Feliz.NexusUI"
+  }
+}
