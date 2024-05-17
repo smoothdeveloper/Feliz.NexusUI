@@ -86,10 +86,25 @@ type Groups =
           ]
           *)
       ]
+  [<ReactComponent>]
+  static member General () =
+    makeGroup
+      "General"
+      [
+        Widgets.TitleAndChildren
+          "Envelope"
+          [
+            NexusUI.envelope [
+              envelope.points [|{|x = 0.1; y = 0.4 |}|]
+              envelope.onChange (fun points -> Browser.Dom.console.log points)
+            ]
+          ]
+      ]
 type App =
   static member App() =
     React.fragment [
       Groups.Core ()
+      Groups.General ()
     ]
     
 module Main =    
